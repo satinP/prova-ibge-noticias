@@ -1,5 +1,5 @@
 const currentDate = new Date()
-const apiUrl = 'http://servicodados.ibge.gov.br/api/v3/noticias'
+const apiUrl = 'https://servicodados.ibge.gov.br/api/v3/noticias'
 const siteUrl = 'https://agenciadenoticias.ibge.gov.br/'
 let modal
 let nextPage = 2
