@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  background-color: #4682b4;
+  color: #fff;
+  padding: 20px;
+}
+
+.filtros label,
+.filtros select,
+.filtros input[type='number'],
+.filtros input[type='text'],
+.filtros button {
+  margin-right: 10px;
+}
+
+main {
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+
+  background-color: #4682b4;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer p {
+  padding: 20px;
+}
+
+#noticias {
+  max-width: 100ch;
+}
+
+li {
+  list-style: none;
+}
+
+.noticia {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 16px;
+}
+
+header div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.form-busca {
+  position: relative;
+  width: 50%;
+}
+
+.form-busca input {
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+}
+
+.form-busca button {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  padding: 10px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+header div > button {
+  position: absolute;
+  right: 10px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+header button span {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background-color: #f0f0f0;
+  color: #4682b4;
+  border-radius: 16px;
+  padding: 1px;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+}
+
+.noticia:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.noticia div {
+  width: 70%;
+  display: grid;
+}
+
+.noticia img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.noticia h2 {
+  margin-bottom: 10px;
+}
+
+.noticia p {
+  margin-bottom: 10px;
+}
+
+.noticia a {
+  margin-top: auto;
+  text-align: center;
+}
+
+.noticia .tags {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 14px;
+}
+
+.noticia a {
+  color: #333;
+  text-decoration: none;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.noticia a:hover {
+  background-color: #e0e0e0;
+  background-color: #ddd;
+}
+
+dialog {
+  margin: auto;
+  position: relative;
+  width: 50vw;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.filtros label {
+  display: block;
+}
+
+.filtros input[type='date'],
+.filtros input[type='number'],
+.filtros input[type='text'],
+.filtros select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.filtros button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4682b4;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  grid-column: 1 / span 2;
+  width: 100%;
+}
+
+.filtros button:hover {
+  background-color: #3a6687;
+}
+
+@media screen and (max-width: 760px) {
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros button {
+    grid-column: 1;
+  }
+
+  .form-busca {
+    width: 70%;
+  }
+
+  .form-busca input {
+    width: 100%;
+  }
+
+  .noticia {
+    flex-direction: column;
+  }
+
+  .noticia img {
+    width: 100%;
+  }
+
+  .noticia div {
+    width: 100%;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 10px;
+  font-size: 30px;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: #1c1c1c;
+}
+
+#paginacao {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100ch;
+  margin-top: 20px;
+}
+
+#paginacao button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 2px solid #4682b4;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #4682b4;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#paginacao button:hover {
+  background-color: #4682b4;
+  color: #fff;
+}
+
+#paginacao button.active {
+  background-color: #4682b4;
+  color: #fff;
+}

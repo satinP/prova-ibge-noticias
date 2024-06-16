@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal de Notícias</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Portal de Notícias do IBGE</h1>
+      <div>
+        <form class="form-busca" onsubmit="buscaTermo(event)">
+          <input
+            type="text"
+            name="busca"
+            id="busca"
+            placeholder="Buscar noticia por termo"
+          />
+          <button type="submit">🔍</button>
+        </form>
+        <button type="button" onclick="abrirModal()">
+          <div style="position: relative">
+            <svg
+              width="20"
+              height="20"
+              fill="#f0f0f0"
+              viewBox="0 0 80 90"
+              focusable="false"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+            </svg>
+            <span id="numero-filtro">1</span>
+          </div>
+        </button>
+      </div>
+    </header>
+    <dialog>
+      <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <form class="filtros" onsubmit="filtroSubmit(event)">
+          <div>
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" id="tipo">
+              <option value="">Selecione</option>
+              <option value="noticia">Notícia</option>
+              <option value="release">Release</option>
+            </select>
+          </div>
+          <div>
+            <label for="qtd">Quantidade:</label>
+            <select name="qtd" id="qtd">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <div>
+            <label for="de">De:</label>
+            <input type="date" name="de" id="de" />
+          </div>
+          <div>
+            <label for="ate">Até:</label>
+            <input type="date" name="ate" id="ate" />
+          </div>
+          <button type="submit">Aplicar</button>
+        </form>
+      </div>
+    </dialog>
+    <main>
+      <ul id="noticias"></ul>
+      <ul id="paginacao"></ul>
+    </main>
+    <footer>
+      <p>&copy; Prova do segundo bimestre - Programação WEB</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
